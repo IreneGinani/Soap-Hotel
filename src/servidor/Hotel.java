@@ -12,7 +12,7 @@ public class Hotel {
 	public Hotel(String [] tipos, float [] precos, int [] quantidade_por_tipo) { 
 		
 		if ((tipos.length == precos.length) && (precos.length == quantidade_por_tipo.length)) {
-			for (int i : quantidade_por_tipo) {
+			for (int i = 0; i < quantidade_por_tipo.length; i++) {
 				for (int j = 0; j < quantidade_por_tipo[i]; j++) {
 					Quarto quarto = new Quarto(tipos[i], quantidade_por_tipo[i]);
 					quartos.add(quarto);
