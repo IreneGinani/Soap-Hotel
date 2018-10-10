@@ -11,7 +11,7 @@ import javax.jws.soap.SOAPBinding.Style;
 @SOAPBinding(style = Style.RPC)
 public interface IReserva {
 	@WebMethod
-	public ArrayList<ArrayList<Quarto>> listarQuartosDisponiveis();
+	public ArrayList<Quarto> listarQuartosDisponiveis();
 	
 	@WebMethod
 	public boolean reservarQuarto(int tipo_quarto, String nome_cliente);

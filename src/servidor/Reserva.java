@@ -19,21 +19,17 @@ public class Reserva implements IReserva {
 	protected Reserva() { 
 		super();
 		
-		hotel = new Hotel(5, 10);
+		hotel = new Hotel();
 	}
 	
 	@Override
-	public ArrayList<ArrayList<Quarto>> listarQuartosDisponiveis() {
-		return hotel;
+	public ArrayList<Quarto> listarQuartosDisponiveis() {
+		return hotel.getQuartosVagos();
 	}
 
 	@Override
 	public boolean reservarQuarto(int tipo_quarto, String nome_cliente) {
-		boolean a = true;
-		
-		//ALGO
-		
-		return a;
+		return hotel.reservarQuarto(tipo_quarto, nome_cliente);
 	}
 }
  

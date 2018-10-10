@@ -9,7 +9,6 @@ public class Hotel {
 	// preco 1 tipo. 2 preco 2 tipo e assim sucessivamente
 
 	public Hotel(String [] tipos, float [] precos, int [] quantidade_por_tipo) { 
-		
 		if ((tipos.length == precos.length) && (precos.length == quantidade_por_tipo.length)) {
 			for (int i = 0; i < quantidade_por_tipo.length; i++) {
 				for (int j = 0; j < quantidade_por_tipo[i]; j++) {
@@ -21,4 +20,13 @@ public class Hotel {
 			throw new IllegalArgumentException();
 		}
 	}
+	
+	public ArrayList<Quarto> getQuartosVagos() {
+		return quartos;
+	}
+	
+	public boolean reservarQuarto(int tipo_quarto, String nome_cliente) {
+		return true;
+	}
+	
 }
