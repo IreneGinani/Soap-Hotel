@@ -22,6 +22,13 @@ public class Cliente {
 		Service service = Service.create(endpoint, qualifiedName);
 		IReserva stub = service.getPort(IReserva.class);
 		
+		while (true) {
+			System.out.print("\n\n-- Sistema de Reserva de Hotel --");
+			System.out.print("\n1 - Reservar Quarto \n2 - Listar Quartos Disponíveis \n3 - Sair");
+			System.out.print("\n\nEscolha uma opção: ");
+		
+		}
+		
 		//Manipula os dados
 		/*
 			while (true) {
