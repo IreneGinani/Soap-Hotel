@@ -1,9 +1,12 @@
 package servidor;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
 
 public class Hotel {
-	private ArrayList<Quarto> quartos = new ArrayList<Quarto>();
+	private static ArrayList<Quarto> quartos = new ArrayList<Quarto>();
 	
 	// os três pontos serve para dizer que o tamanho das variáveis é flexível, podem ser 1 ou 1 milhão de tipos e precos, sendo par a par, 1
 	// preco 1 tipo. 2 preco 2 tipo e assim sucessivamente
@@ -26,6 +29,25 @@ public class Hotel {
 	}
 	
 	public boolean reservarQuarto(int tipo_quarto, String nome_cliente) {
+		
+		List<Quarto> busca_quartos = quartos.stream().filter(q -> q.getTipo().equals(tipo_quarto) && q.isVago()).collect(Collectors.toList());
+		
+		if ( busca_quartos.size() > 0) {
+			
+			try {
+				
+				busca_quartos.get(0).reservarQuarto(nome_cliente);
+				
+			} catch (IllegalArgumentException e) {
+				System.out.println("Quarto inválido");
+			} catch (IllegalAccessError e) {
+				System.out.println("Quarto já está ocupado");
+			}
+		}
+		
+		
+		
+		
 		return true;
 	}
 	
