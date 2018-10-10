@@ -1,6 +1,7 @@
 package servidor;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Hotel {
 	private ArrayList<Quarto> quartos = new ArrayList<Quarto>();
@@ -22,7 +23,14 @@ public class Hotel {
 	}
 	
 	public ArrayList<Quarto> getQuartosVagos() {
-		return quartos;
+		ArrayList<Quarto> quartos_vagos = new ArrayList<Quarto>();
+		for (int i = 0; i < quartos.size(); i++) {
+			if (quartos.get(i).isVago()) {
+				quartos_vagos.add( quartos.get(i) );
+			}
+		}
+		
+		return quartos_vagos;
 	}
 	
 	public boolean reservarQuarto(int tipo_quarto, String nome_cliente) {

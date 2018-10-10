@@ -18,8 +18,10 @@ public class Reserva implements IReserva {
 	private Hotel hotel;
 	protected Reserva() { 
 		super();
-		
-		hotel = new Hotel();
+		String[] tipos = {"1", "2", "3", "4", "5"};
+		float[] precos = {23.0f, 43.0f, 100.0f, 59.50f, 69.99f};
+		int[] quantidade_por_tipo = {5, 5, 5, 5, 5};
+		hotel = new Hotel( tipos, precos, quantidade_por_tipo) ;
 	}
 	
 	@Override
