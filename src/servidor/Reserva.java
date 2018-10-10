@@ -15,18 +15,16 @@ import java.util.ArrayList;
 
 @WebService(endpointInterface = "service.IReserva")
 public class Reserva implements IReserva {
-	
+	private Hotel hotel;
 	protected Reserva() { 
 		super();
 		
-		//ALGO
+		hotel = new Hotel(5, 10);
 	}
 	
 	@Override
 	public ArrayList<ArrayList<Quarto>> listarQuartosDisponiveis() {
-		ArrayList<ArrayList<Quarto>> quartos_disponiveis = new ArrayList<ArrayList<Quarto>>();
-
-		return quartos_disponiveis;
+		return hotel;
 	}
 
 	@Override
