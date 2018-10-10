@@ -57,5 +57,19 @@ public class Quarto implements Serializable {
 		this.nome_cliente = nome_cliente;
 	}
 	
-	// Método para reservar o quarto
+	public boolean reservarQuarto(String nomeCliente, Quarto quarto) {
+		
+		if (quarto != null) {
+			
+			quarto.setVago(false);
+			quarto.setNome_cliente(nomeCliente);
+			
+			return true;
+		}
+		
+		throw new IllegalArgumentException();
+		
+	}
+	
+	// Mï¿½todo para reservar o quarto
 }
